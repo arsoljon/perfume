@@ -8,6 +8,7 @@ public/dist/
 .env
 .env.local
 .env.*.local
+work/pyStuff/myenv/
 
 # Log files
 npm-debug.log*

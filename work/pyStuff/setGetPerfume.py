@@ -72,11 +72,14 @@ def similarPerfumes(userPrompt, perfumes, thresholdMax = 0.85, thresholdMin = 0.
                 tempPerfumes.remove(perfume)
         thresholdMax -= thresholdChange
     #print results
-    for i, perfume in enumerate(mostSimilar):
-        perfumePrompt = setPerfumePrompt(perfume)
-        print("{}: {}".format(i, perfumePrompt))
     return mostSimilar
     
+def printResults(results):
+    for i, perfume in enumerate(results):
+        perfumePrompt = setPerfumePrompt(perfume)
+        print("{}: {}".format(i, perfumePrompt))
+
+
 perfumes = setupPerfumes()
 perfumePrompt = setPerfumePrompt(perfumes[1])
 userPrompt = "I want to smell like a citrusy citrus orange and a lavenderish lavender grape. Don't forget the citrus."
@@ -85,3 +88,4 @@ userDict = setDoc(userPrompt)
 perfumeDict = setDoc(perfumePrompt)
 
 mostSimilar = similarPerfumes(userPrompt, perfumes)
+printResults(mostSimilar)
